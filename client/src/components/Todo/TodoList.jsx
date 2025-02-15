@@ -21,7 +21,7 @@ function TodoList() {
   const fetchTodos = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/todos', { headers });
+      const response = await axios.get('https://todo-backend-crc0f2hwd0fxeags.southindia-01.azurewebsites.net/api/todos', { headers });
       setTodos(response.data);
     } catch (err) {
       setError('Failed to fetch todos');
