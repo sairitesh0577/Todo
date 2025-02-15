@@ -36,7 +36,7 @@ function TodoList() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/todos',
+        'https://todo-backend-crc0f2hwd0fxeags.southindia-01.azurewebsites.net/api/todos',
         { text: newTodo },
         { headers }
       );
@@ -52,7 +52,7 @@ function TodoList() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://todo-backend-crc0f2hwd0fxeags.southindia-01.azurewebsites.net/api/todos/${id}`,
         { text: editText },
         { headers }
       );
@@ -69,7 +69,7 @@ function TodoList() {
   const toggleTodo = async (id, completed) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://todo-backend-crc0f2hwd0fxeags.southindia-01.azurewebsites.net/api/todos/${id}`,
         { completed: !completed },
         { headers }
       );
@@ -83,7 +83,7 @@ function TodoList() {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, { headers });
+      await axios.delete(`https://todo-backend-crc0f2hwd0fxeags.southindia-01.azurewebsites.net/api/todos/${id}`, { headers });
       setTodos(todos.filter((todo) => todo._id !== id));
     } catch (err) {
       setError('Failed to delete todo');
